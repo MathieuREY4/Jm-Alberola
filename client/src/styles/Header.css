@@ -1,68 +1,72 @@
 .header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Disposition par défaut pour mobile */
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px; /* Padding ajusté pour mobile */
   margin: auto;
-  max-width: 1200px;
+  max-width: 1200px; /* Largeur maximale pour les grands écrans */
   margin-top: 3rem;
-  gap: 400px;
+  gap: 90px; /* Espace entre les éléments */
 }
 
 .image-container {
   position: relative;
-  width: 500px;
-  height: 500px;
-  margin-right: 20px;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .image {
-  width: 150%;
-  height: auto;
-  border-radius: 130px;
+  width: 100%; /* Ajustement à 100% du conteneur */
+  height: auto; /* Maintenir le ratio d'aspect */
+  border-radius: 130px; /* Coins arrondis */
+  margin-bottom: 20px; /* Espacement en dessous de l'image */
 }
 
 .overlay {
   position: absolute;
-  top: 50px;
-  left: 162px;
+  top: -60px;
+  left: 30px;
   width: 80%;
   height: auto;
+  box-shadow: 2px 2px 2px 2px #bababa;
+  margin-top: 0.5rem;
 }
 
 .header-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center; /* Centrer le texte */
+  text-align: center; /* Centrer le texte */
 }
 
 .header-title {
-  font-size: 1.8em;
+  font-size: 1.5em; /* Taille du titre pour mobile */
   margin: 0;
 }
 
 .header-description {
-  font-size: 1.5em;
-  margin: 10px 0;
+  font-size: 1.2em; /* Taille de la description pour mobile */
+  margin: 10px 0; /* Marges autour de la description */
 }
 
 .header-button {
-  padding: 15px 30px;
-  font-size: 1.1em;
-  width: 170px;
-  margin: 1rem auto;
-  border-radius: 8px;
-  background: linear-gradient(to bottom, #f5f5f5, #000);
-  box-shadow: 2px 2px 2px 2px #6e6e6e;
-  color: white;
-  cursor: pointer;
-  animation: colorCycle 5s infinite;
+  padding: 15px 30px; /* Espacement interne */
+  font-size: 1.1em; /* Taille du texte du bouton */
+  width: 80%; /* Ajuster la largeur du bouton pour mobile */
+  margin: 1rem auto; /* Centrer le bouton */
+  border-radius: 8px; /* Coins arrondis du bouton */
+  background: linear-gradient(to bottom, #f5f5f5, #000); /* Dégradé */
+  box-shadow: 2px 2px 2px #6e6e6e; /* Ombre */
+  color: white; /* Couleur du texte */
+  cursor: pointer; /* Curseur en forme de main */
+  animation: colorCycle 5s infinite; /* Animation de couleur */
   text-shadow:
     -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
-    1px 1px 0 #000;
+    1px 1px 0 #000; /* Ombre du texte */
 }
 
 @keyframes colorCycle {
@@ -84,5 +88,39 @@
 }
 
 .header-button:active {
-  transform: scale(1.03);
+  transform: scale(1.03); /* Animation lors du clic */
+}
+
+/* Styles pour la version PC */
+@media (min-width: 769px) {
+  .header {
+    flex-direction: row; /* Disposition en ligne pour PC */
+    gap: 100px; /* Espace entre les éléments */
+    padding: 5rem; /* Ajustement du padding */
+    margin-top: 10rem;
+    box-shadow: 2px 2px 2px 2px #bababa;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .image-container {
+    width: 300px; /* Largeur fixe pour PC */
+  }
+
+  .overlay {
+    box-shadow: 2px 2px 2px 2px #bababa;
+  }
+
+  .header-title {
+    font-size: 1.8em; /* Taille du titre pour PC */
+  }
+
+  .header-description {
+    font-size: 1.5em; /* Taille de la description pour PC */
+  }
+
+  .header-button {
+    width: 170px; /* Largeur fixe pour PC */
+    margin-top: 4rem;
+  }
 }

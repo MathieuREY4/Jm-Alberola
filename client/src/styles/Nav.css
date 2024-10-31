@@ -15,15 +15,17 @@
 
 .nav-list {
   display: flex;
+  flex-direction: row; /* Disposition par défaut pour mobile */
   list-style-type: none;
   padding: 0;
   margin: 0;
   flex: 1;
+  justify-content: center; /* Centrer les éléments */
 }
 
 .nav-list li {
-  margin: 0 5px;
-  font-size: 1.5em;
+  margin: 0 10px; /* Marge horizontale entre les éléments */
+  font-size: 1.2em; /* Taille de la police pour mobile */
   text-transform: uppercase;
   cursor: pointer;
   display: flex;
@@ -58,6 +60,7 @@
 }
 
 .nav-logo {
+  display: none; /* Masquer l'image sur mobile */
   width: 400px;
   height: auto;
   position: absolute;
@@ -86,14 +89,26 @@
   }
 }
 
-.nav-list {
-  margin-left: 30rem;
-}
+/* Styles pour la version PC */
+@media (min-width: 769px) {
+  .nav-list {
+    flex-direction: row; /* Disposition en ligne pour PC */
+    margin-left: 30rem; /* Garder le style PC */
+  }
 
-.nav-list li:first-child {
-  margin-right: 50rem;
-}
+  .nav-logo {
+    display: block; /* Afficher l'image sur PC */
+  }
 
-.nav-list li:last-child {
-  margin-left: 50px;
+  .nav-list li {
+    font-size: 1.5em; /* Ajuster la taille de la police pour PC */
+  }
+
+  .nav-list li:first-child {
+    margin-right: 50rem;
+  }
+
+  .nav-list li:last-child {
+    margin-left: 50px;
+  }
 }
